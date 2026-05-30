@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Career Positioning Diagnostic | Hire Me Now Resumes</title>
+  <meta name="description" content="Understand how Canadian employers may interpret your resume for a specific target role. A free career positioning diagnostic by Hire Me Now Resumes.">
+  <link rel="canonical" href="https://hiremenow-diagnostic-v2.pages.dev/">
+  <meta property="og:title" content="Career Positioning Diagnostic | Hire Me Now Resumes">
+  <meta property="og:description" content="Upload your resume and target role. Receive a structured diagnostic of how employers may read your positioning, strengths, and alignment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hiremenow-diagnostic-v2.pages.dev/">
+  <meta property="og:image" content="https://hiremenowresumes.ca/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="container nav-container">
+      <a href="https://hiremenowresumes.ca/" class="nav-logo">Hire Me Now</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" aria-label="Main links">
+        <a href="https://hiremenowresumes.ca/" aria-current="page">Home</a>
+        <a href="https://hiremenowresumes.ca/services.html">Services</a>
+        <a href="https://hiremenowresumes.ca/resources.html">Resources</a>
+        <a href="https://hiremenowresumes.ca/about.html">About</a>
+        <a href="https://hiremenowresumes.ca/contact.html">Contact</a>
+        <a class="nav-cta" href="https://calendly.com/hire-me-now-resumes/15" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://hiremenowresumes.ca/" aria-current="page">Home</a>
+      <a href="https://hiremenowresumes.ca/services.html">Services</a>
+      <a href="https://hiremenowresumes.ca/resources.html">Resources</a>
+      <a href="https://hiremenowresumes.ca/about.html">About</a>
+      <a href="https://hiremenowresumes.ca/contact.html">Contact</a>
+      <a class="mobile-book-link" href="https://calendly.com/hire-me-now-resumes/15" target="_blank" rel="noopener">Book a Call →</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <p class="eyebrow hero-eyebrow">Career Positioning Diagnostic</p>
+        <h1 id="hero-title">Understand how <em>employers</em> read your resume</h1>
+        <p class="hero-subheadline">Paste your resume and target role below. Receive a structured diagnostic of how your experience may be interpreted for that role by a Canadian employer.</p>
+      </div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#FAF7F2"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="diagnostic-section" aria-labelledby="diagnostic-heading">
+      <div class="container diagnostic-grid">
+        <div class="form-card">
+          <div class="form-warning">
+            For the most accurate diagnostic, provide a target job title and paste the job posting or job description if available. Without a specific job posting, the diagnostic reflects general patterns only. Each posting may require a different strategy.
+          </div>
+          <h2 id="diagnostic-heading" class="form-heading">Run your diagnostic</h2>
+          <form id="diagnosticForm" novalidate>
+            <div class="field-group" data-field="jobTitle">
+              <label for="jobTitle">Target Job Title <span aria-hidden="true">*</span></label>
+              <input type="text" id="jobTitle" name="jobTitle" required placeholder="e.g. Senior Project Manager" autocomplete="off">
+              <p class="field-hint">Enter the exact job title you are applying for.</p>
+            </div>
+
+            <div class="field-group" data-field="jobPosting">
+              <label for="jobPosting">Job Posting or Job Description <span class="label-optional">(Recommended)</span></label>
+              <textarea id="jobPosting" name="jobPosting" rows="6" placeholder="Paste the full job posting here. This significantly improves diagnostic accuracy."></textarea>
+              <p class="field-hint">Paste the full posting if available. The diagnostic will be more specific and useful with this context.</p>
+            </div>
+
+            <div class="field-group" data-field="resumeText">
+              <label for="resumeText">Your Resume Text <span aria-hidden="true">*</span></label>
+              <textarea id="resumeText" name="resumeText" rows="12" required placeholder="Paste the full text of your resume here. Do not upload files."></textarea>
+              <p class="field-hint">Copy and paste your resume text. Do not include personal contact details if you prefer not to share them.</p>
+            </div>
+
+            <p class="privacy-note">Your resume text is sent securely to generate the diagnostic and is not stored, saved, or used for any other purpose.</p>
+            <div id="apiError" class="api-error" role="alert" hidden>Something went wrong. Please try again in a moment.</div>
+            <div id="loadingStatus" class="sr-only" aria-live="polite"></div>
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-submit">
+              Run Diagnostic
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+
+        <aside class="result-panel" id="resultPanel" aria-live="polite" aria-labelledby="result-panel-heading">
+          <div class="placeholder-state">
+            <div class="placeholder-icon" aria-hidden="true">→</div>
+            <h2 id="result-panel-heading">Your diagnostic will appear here</h2>
+            <p>Complete the form and run the diagnostic. Results stay on this page above this panel. Your resume text is not stored.</p>
+            <div class="placeholder-divider"></div>
+            <p class="placeholder-label">What this diagnostic covers:</p>
+            <ul class="coverage-list">
+              <li>Initial Impression</li>
+              <li>Positioning Strengths</li>
+              <li>Alignment With Target Role</li>
+              <li>Potential Employer Questions</li>
+              <li>Untapped Positioning Opportunities</li>
+              <li>Strategic Risks</li>
+              <li>Recommended Next Step</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container cta-content">
+        <p class="eyebrow cta-eyebrow">Ready to stop guessing?</p>
+        <h2 id="cta-heading">Start with a <em>focused</em> conversation</h2>
+        <p>Book a free 15-minute fit call. Walk away with a clearer sense of what to fix next in your resume, positioning, and job search strategy.</p>
+        <a class="btn cta-button" href="https://calendly.com/hire-me-now-resumes/15" target="_blank" rel="noopener">Book a Free 15-Minute Fit Call →</a>
+        <a class="cta-email" href="mailto:info@hiremenowresumes.ca">Or email us at info@hiremenowresumes.ca</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="https://hiremenowresumes.ca/" class="footer-logo">Hire Me Now</a>
+          <p>Career strategy and job search coaching for newcomers, students, and professionals navigating the Canadian labour market.</p>
+        </div>
+        <div class="footer-column">
+          <h2>Navigation</h2>
+          <a href="https://hiremenowresumes.ca/">Home</a>
+          <a href="https://hiremenowresumes.ca/services.html">Services</a>
+          <a href="https://hiremenowresumes.ca/resources.html">Resources</a>
+          <a href="https://hiremenowresumes.ca/about.html">About</a>
+          <a href="https://hiremenowresumes.ca/contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h2>Services</h2>
+          <a href="https://hiremenowresumes.ca/services.html">Career Diagnostic</a>
+          <a href="https://hiremenowresumes.ca/services.html">Resume Strategy Package</a>
+          <a href="https://hiremenowresumes.ca/services.html">Multi-Path Strategy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Hire Me Now. All rights reserved.</p>
+        <a href="mailto:info@hiremenowresumes.ca">info@hiremenowresumes.ca</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="script.js" defer></script>
+</body>
+</html>
