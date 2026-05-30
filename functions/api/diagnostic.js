@@ -1,3 +1,17 @@
+const REQUESTED_MODEL = 'gpt-4.1-mini';
+const FALLBACK_MODEL = 'gpt-4o-mini';
+
+async function getOpenAIErrorMessage(response) {
+  const errorText = await response.text();
+
+  try {
+    const errorData = JSON.parse(errorText);
+    return errorData?.error?.message || errorText;
+  } catch {
+    return errorText;
+  }
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -64,25 +78,31 @@ ${resumeText.trim()}
 
 Provide the diagnostic. Write each section heading on its own line followed immediately by 2–4 paragraphs. Do not use bullet points, asterisks, or markdown. Write in plain prose. Be specific to this resume and this target role.`;
 
+  const createOpenAIRequest = (model) => fetch('https://api.openai.com/v1/responses', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${env.OPENAI_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model,
+      store: false,
+      input: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+      ],
+      max_output_tokens: 2000,
+      temperature: 0.4
+    })
+  });
+
   let openaiResponse;
   try {
-    openaiResponse = await fetch('https://api.openai.com/v1/responses', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${env.OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o',
-        store: false,
-        input: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt }
-        ],
-        max_output_tokens: 2000,
-        temperature: 0.4
-      })
-    });
+    openaiResponse = await createOpenAIRequest(REQUESTED_MODEL);
+
+    if (!openaiResponse.ok && FALLBACK_MODEL !== REQUESTED_MODEL) {
+      openaiResponse = await createOpenAIRequest(FALLBACK_MODEL);
+    }
   } catch {
     return new Response(
       JSON.stringify({ error: 'Failed to reach the diagnostic service. Please try again.' }),
@@ -91,11 +111,11 @@ Provide the diagnostic. Write each section heading on its own line followed imme
   }
 
   if (!openaiResponse.ok) {
-    const errText = await openaiResponse.text();
-    console.error('OpenAI error:', errText);
+    const openaiErrorMessage = await getOpenAIErrorMessage(openaiResponse);
+    console.error('OpenAI error:', openaiErrorMessage);
     return new Response(
-      JSON.stringify({ error: 'The diagnostic service returned an error. Please try again.' }),
-      { status: 502, headers: corsHeaders }
+      JSON.stringify({ error: openaiErrorMessage }),
+      { status: openaiResponse.status, headers: corsHeaders }
     );
   }
 
