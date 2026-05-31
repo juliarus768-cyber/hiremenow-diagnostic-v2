@@ -1,11 +1,10 @@
 const SECTIONS = [
-  { num: '01', title: 'Initial Impression' },
-  { num: '02', title: 'Positioning Strengths' },
-  { num: '03', title: 'Alignment With Target Role' },
-  { num: '04', title: 'Potential Employer Questions' },
-  { num: '05', title: 'Untapped Positioning Opportunities' },
-  { num: '06', title: 'Strategic Risks' },
-  { num: '07', title: 'Recommended Next Step' }
+  { num: '01', title: 'What I See First' },
+  { num: '02', title: 'Summary and Introduction' },
+  { num: '03', title: 'Experience Section' },
+  { num: '04', title: 'Language and Mechanics' },
+  { num: '05', title: 'Format and First Impression' },
+  { num: '06', title: 'Overall Strategy' }
 ];
 
 const diagnosticForm = document.getElementById('diagnosticForm');
@@ -181,11 +180,11 @@ function parseSections(rawText) {
 function renderInlineCta() {
   return `
     <div class="result-cta">
-      <h3>This diagnostic provides clarity, not execution.</h3>
-      <p>It identifies patterns in how your resume may be interpreted. It does not rewrite your resume, create bullet points, generate summaries, or guarantee any outcome.</p>
-      <p>If you would like resume strategy support, our team is available to help.</p>
-      <a class="btn result-cta-button" href="https://hiremenowresumes.ca/contact.html">Get Resume Strategy Support →</a>
-      <a class="result-cta-link" href="https://calendly.com/hire-me-now-resumes/15" target="_blank" rel="noopener">Or book a free 15-minute fit call →</a>
+      <p class="result-cta-kicker">Next step</p>
+      <h3>Need Help Fixing These Issues?</h3>
+      <p>This diagnostic identifies patterns and opportunities, but it does not rewrite your resume or build a job search strategy.</p>
+      <p>If you would like a personalized resume review and strategy consultation, book a free 15-minute fit call.</p>
+      <a class="btn result-cta-button" href="https://hiremenowresumes.ca/contact.html">Book a Free 15-Minute Fit Call</a>
     </div>
   `;
 }
