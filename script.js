@@ -180,11 +180,11 @@ function parseSections(rawText) {
 function renderInlineCta() {
   return `
     <div class="result-cta">
-      <h3>This diagnostic provides clarity, not execution.</h3>
-      <p>It identifies patterns in how your resume may be interpreted. It does not rewrite your resume, create bullet points, generate summaries, or guarantee any outcome.</p>
-      <p>If you would like resume strategy support, our team is available to help.</p>
-      <a class="btn result-cta-button" href="https://hiremenowresumes.ca/contact.html">Get Resume Strategy Support →</a>
-      <a class="result-cta-link" href="https://calendly.com/hire-me-now-resumes/15" target="_blank" rel="noopener">Or book a free 15-minute fit call →</a>
+      <p class="result-cta-kicker">Next step</p>
+      <h3>Need Help Fixing These Issues?</h3>
+      <p>This diagnostic identifies patterns and opportunities, but it does not rewrite your resume or build a job search strategy.</p>
+      <p>If you would like a personalized resume review and strategy consultation, book a free 15-minute fit call.</p>
+      <a class="btn result-cta-button" href="https://hiremenowresumes.ca/contact.html">Book a Free 15-Minute Fit Call</a>
     </div>
   `;
 }
