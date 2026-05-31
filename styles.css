@@ -147,7 +147,7 @@ textarea:focus-visible {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
 }
 
 .nav-links a:not(.nav-cta) {
@@ -300,6 +300,66 @@ textarea:focus-visible {
 .hero-wave svg {
   width: 100%;
   height: 100%;
+}
+
+.home-diagnostic-cta {
+  background: var(--cream);
+  padding: 72px 0 0;
+}
+
+.home-diagnostic-cta-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border-gold);
+  border-left: 6px solid var(--gold);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow-soft);
+  padding: 42px 44px;
+}
+
+.home-diagnostic-cta-eyebrow {
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.home-diagnostic-cta h2 {
+  max-width: 680px;
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.home-diagnostic-cta p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.home-diagnostic-cta-note {
+  margin-top: 14px !important;
+  color: var(--navy-mid) !important;
+  font-size: 14px !important;
+}
+
+.home-diagnostic-cta-button {
+  background: var(--gold);
+  color: var(--white);
+  padding: 15px 28px;
+  white-space: nowrap;
+}
+
+.home-diagnostic-cta-button:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
 }
 
 .diagnostic-section {
@@ -596,51 +656,56 @@ textarea:focus {
 }
 
 .result-cta {
-  background: var(--gold-pale);
+  position: relative;
+  background: linear-gradient(135deg, var(--gold-pale) 0%, #fffaf0 100%);
   border: 1px solid var(--border-gold);
+  border-left: 6px solid var(--gold);
   border-radius: var(--radius-card);
-  padding: 32px 28px;
-  margin-top: 32px;
+  box-shadow: 0 18px 45px rgba(12, 27, 51, 0.12);
+  padding: 38px 34px;
+  margin-top: 40px;
+}
+
+.result-cta-kicker {
+  margin: 0 0 10px !important;
+  color: var(--gold) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em;
+  line-height: 1.2 !important;
+  text-transform: uppercase;
 }
 
 .result-cta h3 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   color: var(--navy);
-  line-height: 1.25;
+  line-height: 1.15;
 }
 
 .result-cta p {
   margin: 0 0 14px;
-  color: var(--muted);
-  font-size: 14px;
+  color: var(--navy-mid);
+  font-size: 15px;
   line-height: 1.7;
   font-weight: 300;
 }
 
 .result-cta-button {
-  margin-top: 8px;
+  margin-top: 12px;
   background: var(--navy);
   color: var(--white);
-  padding: 13px 24px;
-  font-size: 14px;
-  font-weight: 500;
+  padding: 15px 26px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .result-cta-button:hover {
   background: var(--navy-light);
-}
-
-.result-cta-link {
-  display: block;
-  margin-top: 14px;
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .cta-band {
@@ -824,6 +889,14 @@ textarea:focus {
 }
 
 @media (max-width: 900px) {
+  .home-diagnostic-cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-diagnostic-cta-button {
+    justify-self: start;
+  }
+
   .diagnostic-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -898,6 +971,14 @@ textarea:focus {
 
   .hero {
     padding: 56px 0 56px;
+  }
+
+  .home-diagnostic-cta {
+    padding-top: 48px;
+  }
+
+  .home-diagnostic-cta-card {
+    padding: 30px 24px;
   }
 
   .diagnostic-section,
