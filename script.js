@@ -1,11 +1,10 @@
 const SECTIONS = [
-  { num: '01', title: 'Initial Impression' },
-  { num: '02', title: 'Positioning Strengths' },
-  { num: '03', title: 'Alignment With Target Role' },
-  { num: '04', title: 'Potential Employer Questions' },
-  { num: '05', title: 'Untapped Positioning Opportunities' },
-  { num: '06', title: 'Strategic Risks' },
-  { num: '07', title: 'Recommended Next Step' }
+  { num: '01', title: 'What I See First' },
+  { num: '02', title: 'Summary and Introduction' },
+  { num: '03', title: 'Experience Section' },
+  { num: '04', title: 'Language and Mechanics' },
+  { num: '05', title: 'Format and First Impression' },
+  { num: '06', title: 'Overall Strategy' }
 ];
 
 const diagnosticForm = document.getElementById('diagnosticForm');
