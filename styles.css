@@ -302,6 +302,66 @@ textarea:focus-visible {
   height: 100%;
 }
 
+.home-diagnostic-cta {
+  background: var(--cream);
+  padding: 72px 0 0;
+}
+
+.home-diagnostic-cta-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border-gold);
+  border-left: 6px solid var(--gold);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow-soft);
+  padding: 42px 44px;
+}
+
+.home-diagnostic-cta-eyebrow {
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.home-diagnostic-cta h2 {
+  max-width: 680px;
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.home-diagnostic-cta p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.home-diagnostic-cta-note {
+  margin-top: 14px !important;
+  color: var(--navy-mid) !important;
+  font-size: 14px !important;
+}
+
+.home-diagnostic-cta-button {
+  background: var(--gold);
+  color: var(--white);
+  padding: 15px 28px;
+  white-space: nowrap;
+}
+
+.home-diagnostic-cta-button:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
 .diagnostic-section {
   background: var(--cream);
   padding: 80px 0;
@@ -829,6 +889,14 @@ textarea:focus {
 }
 
 @media (max-width: 900px) {
+  .home-diagnostic-cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-diagnostic-cta-button {
+    justify-self: start;
+  }
+
   .diagnostic-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -903,6 +971,14 @@ textarea:focus {
 
   .hero {
     padding: 56px 0 56px;
+  }
+
+  .home-diagnostic-cta {
+    padding-top: 48px;
+  }
+
+  .home-diagnostic-cta-card {
+    padding: 30px 24px;
   }
 
   .diagnostic-section,
