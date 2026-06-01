@@ -123,15 +123,13 @@ textarea:focus-visible {
   background: var(--navy);
 }
 
-.nav-container {
+.nav-inner {
   height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
 }
 
-.nav-logo,
 .footer-logo {
   font-family: var(--font-display);
   color: var(--white);
@@ -141,7 +139,19 @@ textarea:focus-visible {
 }
 
 .nav-logo {
-  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.nav-logo img {
+  display: block;
+  width: 220px;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
 }
 
 .nav-links {
