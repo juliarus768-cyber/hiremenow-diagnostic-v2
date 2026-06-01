@@ -12,8 +12,9 @@
   --border: rgba(12,27,51,0.12);
   --border-gold: rgba(201,146,42,0.3);
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', Arial, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
   --radius-small: 4px;
+  --radius: 4px;
   --radius-card: 12px;
   --radius-pill: 100px;
   --card-shadow: 0 8px 32px rgba(12,27,51,0.10);
@@ -121,17 +122,16 @@ textarea:focus-visible {
   z-index: 100;
   height: 68px;
   background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.nav-container {
+.nav-inner {
   height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
 }
 
-.nav-logo,
 .footer-logo {
   font-family: var(--font-display);
   color: var(--white);
@@ -141,56 +141,75 @@ textarea:focus-visible {
 }
 
 .nav-logo {
-  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.nav-logo img {
+  display: block;
+  width: 220px;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 22px;
+  white-space: nowrap;
 }
 
-.nav-links a:not(.nav-cta) {
-  position: relative;
-  color: rgba(255,255,255,0.72);
-  font-size: 13px;
+.nav-links a {
+  font-size: 12px;
   font-weight: 400;
-  transition: color 0.15s;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.18s;
 }
 
-.nav-links a:not(.nav-cta):hover,
+.nav-links a:hover,
+.nav-links a.active,
 .nav-links a[aria-current="page"] {
   color: var(--white);
 }
 
-.nav-links a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 1px;
-  background: var(--gold-light);
-}
-
 .nav-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gold);
-  color: var(--white);
-  border-radius: var(--radius-pill);
-  padding: 8px 18px;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: background 0.15s, transform 0.15s;
+  color: var(--gold-light) !important;
+  border: 1px solid rgba(232,182,85,0.4);
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  transition: all 0.18s !important;
 }
 
 .nav-cta:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
+  background: rgba(232,182,85,0.12) !important;
+  border-color: var(--gold-light) !important;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 10.5px;
+    letter-spacing: 0.035em;
+  }
+
+  .nav-cta {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 .nav-toggle {
