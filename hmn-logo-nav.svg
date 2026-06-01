@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="44" viewBox="0 0 220 44" role="img" aria-labelledby="title desc">
+  <title id="title">Hire Me Now Resumes</title>
+  <desc id="desc">Hire Me Now Resumes horizontal logo for navigation.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M21.9 2.5c10.7 0 19.4 8.7 19.4 19.4s-8.7 19.4-19.4 19.4S2.5 32.6 2.5 21.9 11.2 2.5 21.9 2.5Z" fill="#0C1B33" stroke="#C9922A" stroke-width="2"/>
+    <path d="M13.2 13.2h3.6v7h10.1v-7h3.6v17.4h-3.6v-7.2H16.8v7.2h-3.6V13.2Z" fill="#FFFFFF"/>
+    <path d="M34.2 14.3v15.1" stroke="#E8B655" stroke-width="2" stroke-linecap="round"/>
+    <text x="51" y="22" fill="#FFFFFF" font-family="Cormorant Garamond, Georgia, serif" font-size="20" font-weight="600" letter-spacing="0.2">Hire Me Now</text>
+    <text x="52" y="36" fill="#E8B655" font-family="DM Sans, Arial, sans-serif" font-size="9" font-weight="600" letter-spacing="2.4">RESUMES</text>
+  </g>
+</svg>
