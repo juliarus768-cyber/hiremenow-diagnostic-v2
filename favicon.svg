@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Hire Me Now Resumes favicon</title>
+  <rect width="64" height="64" rx="14" fill="#0C1B33"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#C9922A" stroke-width="4"/>
+  <path d="M18 20h6v9h16v-9h6v24h-6V34H24v10h-6V20Z" fill="#FFFFFF"/>
+  <path d="M48 21v22" stroke="#E8B655" stroke-width="4" stroke-linecap="round"/>
+</svg>
