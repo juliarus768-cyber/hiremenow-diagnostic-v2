@@ -144,6 +144,8 @@ textarea:focus-visible {
   align-items: center;
   flex: 0 0 auto;
   overflow: visible;
+  overflow: visible;
+  text-decoration: none;
 }
 
 .nav-logo img {
