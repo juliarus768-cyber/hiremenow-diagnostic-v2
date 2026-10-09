@@ -80,7 +80,7 @@ Cloudflare Pages automatically maps `functions/api/diagnostic.js` to the `/api/d
 - `jobPosting`
 - `resumeText`
 
-The Pages Function validates the required fields server-side, builds a diagnostic prompt, and calls the OpenAI Responses API. The request sets `store: false` so the diagnostic request is not stored by the API for model training or retention workflows controlled by that parameter. The function returns JSON to the browser in the shape:
+The Pages Function validates the required fields server-side, builds a diagnostic prompt, and calls the OpenAI Responses API. The request uses `store: false` to avoid preserving a generated response as ongoing application state. This is not a zero-retention guarantee. Under the provider's standard data controls, diagnostic inputs may be included in security or abuse-monitoring logs for up to 30 days, subject to applicable exceptions. The public diagnostic privacy notice links to the main website privacy policy. The function returns JSON to the browser in the shape:
 
 ```json
 {
@@ -97,7 +97,7 @@ If validation fails or the upstream service returns an error, the function retur
 | Update canonical URL once final domain is confirmed | `https://hiremenow-diagnostic-v2.pages.dev/` | Confirm |
 | Replace `og-image.jpg` reference with a real hosted image | `https://hiremenowresumes.ca/og-image.jpg` | Confirm |
 | Confirm OpenAI model | Currently `gpt-4o` | Confirm |
-| Add Privacy Policy page link in footer if required | Not currently included | Confirm |
+| Privacy Policy link in footer and form notice | Links to main-site diagnostic privacy section | Verify after coordinated deployment |
 | Test on mobile before launch | Responsive breakpoints included | Confirm on devices |
 
 ## What this tool does not do
