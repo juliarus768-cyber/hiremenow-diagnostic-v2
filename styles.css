@@ -1049,3 +1049,18 @@ textarea:focus {
     font-size: 12pt;
   }
 }
+
+/* Optional, visitor-selected result guidance; reuse the existing result CTA panel. */
+.next-step-choices { border: 0; padding: 0; margin: 24px 0 0; min-width: 0; }
+.next-step-choices legend { font-weight: 500; color: var(--navy); margin-bottom: 12px; }
+.next-step-choice { display: flex; align-items: flex-start; gap: 12px; padding: 12px; margin-bottom: 10px; border: 1px solid var(--border-gold); border-radius: var(--radius-small); background: var(--white); color: var(--navy); font-size: 14px; line-height: 1.6; cursor: pointer; }
+.next-step-choice input { flex: 0 0 18px; width: 18px; height: 18px; margin: 3px 0 0; padding: 0; accent-color: var(--navy); }
+.next-step-choice:focus-within { outline: 3px solid var(--navy); outline-offset: 2px; }
+.next-step-choice:has(input:checked) { border-color: var(--navy); }
+.next-step-guidance:not(:empty) { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-gold); }
+.next-step-guidance h4 { color: var(--navy); font-size: 16px; line-height: 1.5; margin: 0 0 12px; }
+.next-step-guidance ul { list-style: disc; padding-left: 20px; margin: 0 0 20px; }
+.next-step-guidance li { margin: 0 0 10px; }
+.result-next-steps a:not(.btn) { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.result-next-steps a:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+.result-next-steps a.btn { max-width: 100%; text-align: center; overflow-wrap: anywhere; }
