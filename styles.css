@@ -93,7 +93,7 @@ button {
   top: -60px;
   left: 16px;
   background: var(--gold);
-  color: var(--white);
+  color: var(--navy);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 20px;
@@ -111,7 +111,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--navy);
   outline-offset: 3px;
   border-radius: var(--radius-small);
 }
@@ -649,7 +649,7 @@ textarea:focus {
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 300;
-  color: rgba(12,27,51,0.08);
+  color: #865b14;
   line-height: 1;
   margin-right: 14px;
   flex-shrink: 0;
@@ -813,7 +813,7 @@ textarea:focus {
 .footer-brand p {
   max-width: 260px;
   margin: 0;
-  color: rgba(255,255,255,0.4);
+  color: #cbd5e1;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.7;
@@ -821,7 +821,7 @@ textarea:focus {
 
 .footer-column h2 {
   margin: 0 0 18px;
-  color: rgba(255,255,255,0.30);
+  color: var(--gold-light);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -831,7 +831,7 @@ textarea:focus {
 .footer-column a {
   display: block;
   margin-bottom: 10px;
-  color: rgba(255,255,255,0.50);
+  color: #cbd5e1;
   font-size: 14px;
   transition: color 0.15s;
 }
@@ -851,7 +851,7 @@ textarea:focus {
 
 .footer-bottom p {
   margin: 0;
-  color: rgba(255,255,255,0.25);
+  color: #cbd5e1;
   font-size: 12px;
 }
 
@@ -1048,4 +1048,31 @@ textarea:focus {
     color: black;
     font-size: 12pt;
   }
+}
+
+/* Optional, visitor-selected result guidance; reuse the existing result CTA panel. */
+.next-step-choices { border: 0; padding: 0; margin: 24px 0 0; min-width: 0; }
+.next-step-choices legend { font-weight: 500; color: var(--navy); margin-bottom: 12px; }
+.next-step-choice { display: flex; align-items: flex-start; gap: 12px; padding: 12px; margin-bottom: 10px; border: 1px solid var(--border-gold); border-radius: var(--radius-small); background: var(--white); color: var(--navy); font-size: 14px; line-height: 1.6; cursor: pointer; }
+.next-step-choice input { flex: 0 0 18px; width: 18px; height: 18px; margin: 3px 0 0; padding: 0; accent-color: var(--navy); }
+.next-step-choice:focus-within { outline: 3px solid var(--navy); outline-offset: 2px; }
+.next-step-choice:has(input:checked) { border-color: var(--navy); }
+.next-step-guidance:not(:empty) { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-gold); }
+.next-step-guidance h4 { color: var(--navy); font-size: 16px; line-height: 1.5; margin: 0 0 12px; }
+.next-step-guidance ul { list-style: disc; padding-left: 20px; margin: 0 0 20px; }
+.next-step-guidance li { margin: 0 0 10px; }
+.result-next-steps a:not(.btn) { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.result-next-steps a:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+.result-next-steps a.btn { max-width: 100%; text-align: center; overflow-wrap: anywhere; }
+
+/* Keep focus visible on both light content and dark navigation/footer surfaces. */
+.site-nav :focus-visible,
+.site-footer :focus-visible,
+.cta-band :focus-visible,
+.skip-link:focus-visible,
+.back-to-top:focus-visible { outline-color: var(--gold-light); }
+.back-to-top:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 0 5px var(--navy);
 }
