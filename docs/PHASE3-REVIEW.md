@@ -18,8 +18,8 @@ The persistent optional call banner now explains the introductory scope and uses
 
 - `script.js`: fixed choices, safe DOM builders, structural completeness gate, one delegated listener, result-footer insertion and stale-guidance reset.
 - `styles.css`: scoped radio/guidance styles reusing the existing navy/gold/cream CTA panel, fonts and buttons.
-- `index.html`: introductory-call copy and specific footer service destinations.
-- `tests/next-steps.cjs`: browser regression suite, local synthetic API interception and screenshots.
+- `index.html`: introductory-call copy, specific footer service destinations and semantic labelled results section.
+- `tests/next-steps.cjs` and `tests/focus.cjs`: browser regression/accessibility suites, local synthetic API interception and screenshots, including focused controls.
 - `.gitignore`: generated QA output and optional local test dependencies.
 - This review record and `docs/PHASE3-QA.md`; selected screenshots under `docs/previews/`.
 
@@ -39,6 +39,8 @@ All UI destinations are fixed public links from the brief. No contact form is la
 
 Review all five guidance states, mobile screenshots and wording. Manually check screen-reader announcements/focus and physical iOS/Android radio behavior. Reconfirm destination availability if deployment occurs later. Public HTTP/Calendly checks do not prove successful appointment creation, email delivery or service availability for a particular client. No such transaction was performed.
 
-Existing accessibility findings outside this panel are documented in the QA record: low contrast in footer text/decorative result numbers and the nested complementary landmark. There are no newly introduced axe findings and none in the new panel, but this PR does not claim complete site accessibility compliance.
+The final focused cleanup resolves the old footer/number contrast issues and replaces the nested complementary landmark with a labelled results section. Focus colours adapt to light and dark surfaces. The test suite now requires zero current-page axe violations, rather than allowing existing ones; the QA record includes keyboard/focus/live-region assertions and contrast ratios. Physical screen-reader/device review remains a manual limitation, and automated success is not a complete WCAG certification.
+
+The visible skip link also uses navy-on-gold text, and the back-to-top control becomes fully visible on keyboard focus with a contrasting backing ring. All 35 tested current-page/focused states and 21 panel-scoped checks pass with zero remaining automated violations. Historical baseline findings are retained only as before-state evidence.
 
 Cloudflare production/preview settings were not changed. Approval and deployment are separate actions outside this task. There is no new analytics or assessment change to activate after merge.
